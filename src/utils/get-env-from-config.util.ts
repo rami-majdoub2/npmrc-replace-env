@@ -7,8 +7,6 @@
  */
 export function getEnvKeysFromConfig(config: string, envPrefix = ""): string[] {
   return Array.from(
-    new Set(
-      config.match(new RegExp(`(?<=\\=)${envPrefix}[A-Z0-9_]+`, "g")) || []
-    )
+    new Set(config.match(new RegExp(`${envPrefix}[A-Z0-9_]+`, "g")) || [])
   );
 }

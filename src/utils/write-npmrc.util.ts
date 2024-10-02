@@ -29,10 +29,9 @@ export function writeNpmrc({ envPrefix }: WriteNpmrcOptions): void {
   const config = readConfig(DEFAULT_CONFIG_FILE);
   const envs = getEnvKeysFromConfig(config, transformEnvPrefix(envPrefix));
   const npmrc = generateNpmrc(config, envs);
-  const lastModified = `# last modified: ${new Date().toISOString()}\n\n`;
 
   try {
-    file.writeFileSync(DEFAULT_NPMRC_FILE, lastModified + npmrc);
+    file.writeFileSync(DEFAULT_NPMRC_FILE, npmrc);
   } catch (error) {
     throw new Error(
       `Error writing to ${DEFAULT_NPMRC_FILE} file: ${

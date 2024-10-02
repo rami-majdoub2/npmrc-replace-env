@@ -1,6 +1,20 @@
-# npmrc-replace-env
+# hayyarc-replace-env
 
-**A utility for dynamically generating .npmrc files based on configuration and environment variables.**
+this project is a fork of [dennzimm/npmrc-replace-env](https://github.com/dennzimm/npmrc-replace-env)
+
+**A utility for dynamically generating hayyarc files based on configuration and environment variables.**
+
+````
+# .env.hayya
+ENV_PORT=3000
+````
+
+````bash
+NODE_ENV=hayya hayyarc-replace-env && hayya
+````
+
+## TODO: UPDATE DOCS
+
 
 Managing npm registry configurations and authentication tokens across different projects and environments can be cumbersome. This package aims to simplify this process by providing a utility that dynamically generates the `.npmrc` file based on a configuration file (`.npmrc.config`) and corresponding environment variables (`.env`).
 
